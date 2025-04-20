@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт ЛАДАДААДАДАНО</title>
+    <title>...</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -22,6 +22,8 @@
             flex-direction: column;
             font-family: "Shantell Sans", cursive;
             text-align: center;
+            background-color: rgb(0, 0, 0);
+            color: white;
         }
 
         @font-face {
@@ -38,8 +40,25 @@
     </style>
 </head>
 <body>
-    <img src="faku.png" alt="ъуъ">
-    <h3>А все, это одноразовая акция. иди нахер</h3>
-    <span style="display: none;">Иидинахер</span>
+    <h3 id="typing-text"></h3>
+
+    <script>
+        const fullText = 'Оно тут было... ты... просто... ';
+        const transparentText = '<span style="color: #ffffff0c;">прости...</span>';
+        const target = document.getElementById('typing-text');
+        let index = 0;
+
+        function type() {
+            if (index < fullText.length) {
+                target.innerHTML += fullText.charAt(index);
+                index++;
+                setTimeout(type, 100);
+            } else {
+                target.innerHTML += transparentText;
+            }
+        }
+
+        window.onload = type;
+    </script>
 </body>
 </html>
